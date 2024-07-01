@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// src/CodeEditor.tsx
+import React, { useState, ChangeEvent } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 import './CodeEditor.css';
@@ -9,28 +10,28 @@ import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-python';
 
-const languages = {
+const languages: { [key: string]: string } = {
     javascript: 'JavaScript',
     css: 'CSS',
     markup: 'HTML',
     java: 'Java',
-    python: 'Python',
+    python: 'Python'
 };
 
-const CodeEditor = () => {
-    const [code, setCode] = useState('');
-    const [language, setLanguage] = useState('javascript');
+const CodeEditor: React.FC = () => {
+    const [code, setCode] = useState<string>('');
+    const [language, setLanguage] = useState<string>('javascript');
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setCode(e.target.value);
     };
 
-    const handleLanguageChange = (e) => {
+    const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setLanguage(e.target.value);
         setCode('')
     };
 
-    const highlightCode = (code) => {
+    const highlightCode = (code: string): string => {
         return Prism.highlight(code, Prism.languages[language], language);
     };
 
