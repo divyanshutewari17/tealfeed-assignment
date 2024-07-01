@@ -1,0 +1,25 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1.25rem;
+  background-color: #1e1e1e;
+  color: #f8f8f2;
+}
+
+.App {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  background: #2d2d2d;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  color: #f8f8f2;
+}
